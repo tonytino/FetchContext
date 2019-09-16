@@ -1,3 +1,29 @@
+### Purpose
+
+Will fetch data from the endpoint provided, and expose such via context.
+
+Has support for reading/writing from the browser cache.
+
+### Objectives
+
+- [x] Create `FetchContext`
+  - [x] Fetches data and captures in context
+  - [ ] Cache read/write support
+    - [ ] Add support for capturing fetch response in cache
+    - [ ] Add support for reading fetch response in cache
+
+```jsx
+<FetchContext
+  cacheKey='USERS'
+  defaultData={[]}
+  endpoint='https://jsonplaceholder.typicode.com/todos'
+>
+  <ContextRenderer /> // Whatever renders context.data
+</FetchContext>
+```
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
