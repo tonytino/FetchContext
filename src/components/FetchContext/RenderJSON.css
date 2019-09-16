@@ -1,0 +1,11 @@
+.RenderJSON h3 {
+  margin-left: 75px;
+}
+
+.RenderJSON pre {
+  margin: 40px 100px;
+  overflow: scroll;
+  padding: 10px;
+  max-height: 250px;
+  border: 4px solid whitesmoke;
+}
