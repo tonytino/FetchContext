@@ -1,0 +1,45 @@
+.App {
+  position: relative;
+}
+
+.App .BorderColorKey {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(245, 245, 245, 0.99);
+  padding: 4px 25%;
+  width: 100%;
+  min-width: 100%;
+  letter-spacing: 0.5px;
+  box-shadow: 0px 8px 20px -12px rgba(0, 0, 0, 0.5);
+}
+
+.App .BorderColorKey span {
+  font-weight: 600;
+  margin-right: 40px;
+}
+
+.App .BorderColorKey span:last-child {
+  margin-right: 0;
+}
+
+.App .BorderColorKey .cache {
+  color: salmon;
+}
+
+.App .BorderColorKey .default {
+  color: slategray;
+}
+
+.App .BorderColorKey .network {
+  color: teal;
+}
+
+.App .Content {
+  width: 40%;
+  min-width: 320px;
+  margin: auto;
+}

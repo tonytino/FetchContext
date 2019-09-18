@@ -1,26 +1,83 @@
+## FetchContext
+
 ### Purpose
 
 Will fetch data from the endpoint provided, and expose such via context.
 
-Has support for reading/writing from the browser cache.
+Has support for reading/writing from the browser cache using several strategies.
 
-### Objectives
+_This component will NOT manage your cache lifetime._
 
-- [x] Create `FetchContext`
-  - [x] Fetches data and captures in context
-  - [ ] Cache read/write support
-    - [ ] Add support for capturing fetch response in cache
-    - [ ] Add support for reading fetch response in cache
+### Technologies Leveraged
+
+[React API](https://reactjs.org/docs/react-api.html)
+
+[React DOM API](https://reactjs.org/docs/react-dom.html)
+
+[React Hooks API](https://reactjs.org/docs/hooks-reference.html)
+
+[Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+
+[Cache API](https://developers.google.com/web/fundamentals/instant-and-offline/web-storage/cache-api)
+
+### Example Usage
 
 ```jsx
 <FetchContext
-  cacheKey='USERS'
-  defaultData={[]}
-  endpoint='https://jsonplaceholder.typicode.com/todos'
+  cacheName='todosAppCache'
+  cachingStrategy='networkFallbackCache'
+  defaultData={{
+    userId: 0,
+    id: 0,
+    title: 'Example Todo',
+    completed: false
+  }}
+  request={new Request('https://jsonplaceholder.typicode.com/todos/1')}
 >
-  <ContextRenderer /> // Whatever renders context.data
+  <RenderJSON />
 </FetchContext>
 ```
+
+### Try It Out
+
+`App.js` is already configured to demo all four caching strategies. Try testing
+out the functionality by running through this flow:
+
+1. Turn off WiFi and load page
+
+    Default data should be loaded only.
+
+2. Turn on WiFi and load page
+
+    Network data should be loaded only.
+
+3. Turn off WiFi and load page
+
+    Cache and default data should be loaded only.
+
+    _Default data will be loaded where `cachingStrategy = 'network'`._
+
+4. Turn on WiFI and load page
+
+    Network and cache data should be loaded only.
+
+    _Cache data will be loaded where `cachingStrategy = 'cacheFallbackNetwork'`._
+
+    _Cache data will be loaded temporarily where `cachingStrategy = 'cacheThenNetwork'`; you can see this by throttling your network speed to `Slow 3G` in devtools)._
+
+
+
+```bash
+git clone ${REPO}
+npm install
+npm start
+```
+
+### Concerns
+
+- `fetch` may not be supported in all environments
+- `caches` may not be supported in all environments
+- Cache lifetime is not managed
 
 ---
 

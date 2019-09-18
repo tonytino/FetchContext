@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/*
+  https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+  Apply a natural box layout model to all but allowing components to change
+*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

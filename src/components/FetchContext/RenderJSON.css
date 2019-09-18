@@ -1,11 +1,31 @@
+.RenderJSON {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
 .RenderJSON h3 {
-  margin-left: 75px;
+  margin: auto;
+  margin-bottom: 20px;
+  color: midnightblue;
+}
+
+.RenderJSON p {
+  color: slategray;
+  letter-spacing: 0.5px;
+  padding: 8px;
+  margin-bottom: 20px;
 }
 
 .RenderJSON pre {
-  margin: 40px 100px;
-  overflow: scroll;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  border: 4px solid slategray;
+  border-radius: 4px;
   padding: 10px;
   max-height: 250px;
-  border: 4px solid whitesmoke;
+}
+
+.RenderJSON pre code {
+  color: darkslategray;
 }
