@@ -40,6 +40,13 @@ _This component will NOT manage your cache lifetime._
 
 ### Try It Out
 
+```bash
+git clone git@github.com:tonytino/FetchContext.git &&
+cd FetchContext &&
+npm install &&
+npm start
+```
+
 `App.js` is already configured to demo all four caching strategies. Try testing
 out the functionality by running through this flow:
 
@@ -65,13 +72,6 @@ out the functionality by running through this flow:
 
     _Cache data will be loaded temporarily where `cachingStrategy = 'cacheThenNetwork'`; you can see this by throttling your network speed to `Slow 3G` in devtools)._
 
-
-
-```bash
-git clone git@github.com:tonytino/FetchContext.git
-npm install
-npm start
-```
 
 ### Concerns
 
