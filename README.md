@@ -68,7 +68,7 @@ out the functionality by running through this flow:
 
 
 ```bash
-git clone ${REPO}
+git clone git@github.com:tonytino/FetchContext.git
 npm install
 npm start
 ```
